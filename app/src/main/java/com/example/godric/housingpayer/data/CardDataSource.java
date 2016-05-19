@@ -29,13 +29,28 @@ public class CardDataSource extends DataSource {
 
         long insertId = database.insert(DBHelper.TABLE_CARD, null, values);
         if (insertId == -1) {
+            close();
             return false;
         }
         return true;
     }
 
     public Card getCardByNumber(String number) {
-        return null;
+        open();
+        Cursor cursor = database.query(DBHelper.TABLE_CARD,
+                allColumns, DBHelper.CARD_NUMBER + "=?",
+                new String[]{number}, null, null, null);
+        if (cursor.getCount() == 0) {
+            cursor.close();
+            close();
+            return null;
+        }
+        cursor.moveToFirst();
+        Card res = new Card(cursor.getInt(0), cursor.getString(1),
+                                cursor.getInt(2), cursor.getString(3));
+        cursor.close();
+        close();
+        return res;
     }
 
     public ArrayList<Card> getAllCards() {

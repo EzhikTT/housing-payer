@@ -12,7 +12,6 @@ import com.example.godric.housingpayer.data.MyUserDataSource;
 
 public class AddAccountActivity extends AppCompatActivity {
 
-    DBHelper dbHelper;
     MyUserDataSource curUser;
 
     Button okBtt;
@@ -23,7 +22,6 @@ public class AddAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_account);
 
-        dbHelper = new DBHelper(this);
         curUser = new MyUserDataSource(this);
 
         okBtt = (Button) findViewById(R.id.addAccOkBtt);

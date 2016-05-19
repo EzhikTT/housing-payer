@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.godric.housingpayer.essence.User;
+
 public class MainFunctionsActivity extends AppCompatActivity {
+
+    public static User curUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_functions);
+        curUser = new User();
     }
 
     public void doButtonClick(View view) {
