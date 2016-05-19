@@ -59,12 +59,13 @@ public class CardDataSource extends DataSource {
 
         Cursor cursor = database.query(DBHelper.TABLE_CARD,
                 allColumns, null, null, null, null, null);
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            cards.add(new Card(cursor.getInt(0),
-                    cursor.getString(1), cursor.getInt(2), cursor.getString(3)));
-            cursor.moveToNext();
+        if (cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                cards.add(new Card(cursor.getInt(0),
+                        cursor.getString(1), cursor.getInt(2), cursor.getString(3)));
+                cursor.moveToNext();
+            }
         }
         cursor.close();
         close();

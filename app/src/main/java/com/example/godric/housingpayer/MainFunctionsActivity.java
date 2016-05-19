@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.godric.housingpayer.data.CardDataSource;
 import com.example.godric.housingpayer.essence.User;
 
 public class MainFunctionsActivity extends AppCompatActivity {
@@ -16,14 +17,15 @@ public class MainFunctionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_functions);
-        curUser = new User();
+        curUser = new User(this);
     }
 
     public void doButtonClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.mainAddCardBtt:
 
-                Intent intent = new Intent(this, AddCardActivity.class);
+                intent = new Intent(this, AddCardActivity.class);
                 startActivity(intent);
                 break;
 
@@ -33,10 +35,8 @@ public class MainFunctionsActivity extends AppCompatActivity {
                 break;
 
             case R.id.mainPayBtt:
-
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Sorry. Not supported yet!", Toast.LENGTH_SHORT);
-                toast.show();
+                intent = new Intent(this, ChooseServiceActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.mainSendDataBtt:

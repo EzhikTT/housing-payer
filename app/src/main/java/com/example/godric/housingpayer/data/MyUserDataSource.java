@@ -22,8 +22,10 @@ public class MyUserDataSource extends DataSource {
         values.put(DBHelper.USER_PASS, pass);
         long insertId = database.insert(DBHelper.TABLE_USER, null, values);
         close();
-        if (insertId == -1)
+        if (insertId == -1) {
+            close();
             return false;
+        }
         return true;
     }
 
@@ -33,13 +35,18 @@ public class MyUserDataSource extends DataSource {
                 allColumns, DBHelper.USER_NAME + "=?",
                 new String[]{name}, null, null, null);
         if (cursor.getCount() == 0) {
+            cursor.close();
+            close();
             return false;
         }
         cursor.moveToFirst();
         if (name.equals(cursor.getString(0)) && pass.equals(cursor.getString(1))) {
+            close();
+            cursor.close();
             return true;
         }
         close();
+        cursor.close();
         return false;
     }
 }

@@ -27,6 +27,17 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String USER_NAME = "name";
     public static final String USER_PASS = "pass";
 
+    public static final String TABLE_SERVICES = "services";
+    public static final String SERVICE_NAME = "name";
+    public static final String SERVICE_DESCR = "descr";
+    public static final String SERVICE_PRICE = "price";
+    public static final String SERVICE_PERIOD = "period";
+
+    public static final String TABLE_PERIOD = "periods";
+    public static final String PERIOD_STARTING = "start";
+    public static final String PERIOD_ENDING = "end";
+    public static final String PERIOD_VALUE = "value";
+
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -44,6 +55,32 @@ public class DBHelper extends SQLiteOpenHelper {
                 + USER_NAME + " text unique, "
                 + USER_PASS + " text "
                 + ");" );
+        db.execSQL("create table " + TABLE_SERVICES + " ( "
+                + ID + " integer primary key, "
+                + SERVICE_NAME  + " text unique, "
+                + SERVICE_PRICE + " int, "
+                + ");" );
+        db.execSQL("create table " + TABLE_PERIOD + " ( "
+                + ID + " integer primary key, "
+                + PERIOD_STARTING + " text, "
+                + PERIOD_ENDING + " text, "
+                + PERIOD_VALUE + " int "
+
+                + " values ("
+                + "\'Gas\', 23, NULL"
+                + ");");
+                + " values ("
+                + "\'Electric\', 30, NULL"
+                + ");");
+                + " values ("
+                + "\'House\', 43, NULL"
+                + ");");
+                + " values ("
+                + "\'Water\', 29, NULL"
+                + ");");
+                + " values ("
+                + "\'Heating\', 29, NULL"
+                + ");");
     }
 
     @Override
