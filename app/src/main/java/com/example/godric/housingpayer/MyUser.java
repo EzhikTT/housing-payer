@@ -15,23 +15,35 @@ public class MyUser extends DataSource {
         super(context);
     }
 
-    public void addUser(String name, String pass) {
+    public boolean addUser(String name, String pass) {
         open();
+        Cursor cursor = database.query(DBHelper.TABLE_USER,
+                allColumns, DBHelper.USER_NAME + "=?",
+                new String[]{name}, null, null, null);
+        if (cursor == null) {
+            close();
+            return false;
+        }
         ContentValues values = new ContentValues();
         values.put(DBHelper.USER_NAME, name);
         values.put(DBHelper.USER_PASS, pass);
         long insertId = database.insert(DBHelper.TABLE_USER, null, values);
         close();
+        return true;
     }
 
     public boolean isLoginAccept(String name, String pass) {
         open();
         Cursor cursor = database.query(DBHelper.TABLE_USER,
-                allColumns, null,
-                null, null, null, null);
+                allColumns, DBHelper.USER_NAME + "=?",
+                new String[]{name}, null, null, null);
+        if (cursor == null) {
+            return false;
+        }
         cursor.moveToFirst();
-        if (!cursor.isAfterLast() && cursor.getString(0) == name
-                && cursor.getString(1) == pass) {
+        String x1 = cursor.getString(0);
+        String x2 = cursor.getString(1);
+        if (name.equals(cursor.getString(0)) && pass.equals(cursor.getString(1))) {
             return true;
         }
         close();

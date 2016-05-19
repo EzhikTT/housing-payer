@@ -10,8 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Карта"
-        android:id="@+id/textView"
+        android:text="Account"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true" />
 
@@ -30,38 +29,25 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/numberNewCard"
+            android:id="@+id/addAccNameTE"
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
             android:textAlignment="center"
-            android:hint="Номер карты"
-            android:inputType="numberDecimal"
-            android:gravity="center" />
+            android:hint="account"
+            android:gravity="center"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/yearNewCard"
+            android:id="@+id/addAccPassTE"
             android:textAlignment="center"
-            android:hint="Год"
-            android:layout_below="@+id/numberNewCard"
+            android:hint="password"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:inputType="datetime"
-            android:gravity="center" />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ownerNewCard"
-            android:textAlignment="center"
-            android:hint="Владец"
-            android:layout_below="@+id/yearNewCard"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:inputType="textPersonName"
-            android:gravity="center" />
+            android:gravity="center"
+            android:inputType="textPassword" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -76,15 +62,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@android:string/cancel"
-                android:id="@+id/cancelBtt"
-                android:layout_gravity="center" />
+                android:id="@+id/addAccCancelBtt"
+                android:layout_gravity="center"
+                android:onClick="doButtonClick" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@android:string/yes"
-                android:id="@+id/okBtt"
-                android:layout_gravity="center" />
+                android:id="@+id/addAccOkBtt"
+                android:layout_gravity="center"
+                android:onClick="doButtonClick" />
         </LinearLayout>
 
     </LinearLayout>

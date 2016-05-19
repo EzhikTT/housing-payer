@@ -24,7 +24,8 @@
         android:id="@+id/createAccButton"
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="doButtonClick" />
 
     <EditText
         android:layout_width="278dp"
@@ -61,7 +62,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/passEdit"
         android:layout_centerHorizontal="true"
-        android:onClick="doLogin"
+        android:onClick="doButtonClick"
         android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>
