@@ -1,4 +1,4 @@
-package com.example.godric.housingpayer;
+package com.example.godric.housingpayer.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,13 +35,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_CARD + " ( "
                 + ID + " integer primary key, "
-                + CARD_NUMBER + " text, "
+                + CARD_NUMBER + " text unique, "
                 + CARD_YEAR + " integer, "
                 + CARD_OWNER + " text "
                 + ");" );
         db.execSQL("create table " + TABLE_USER + " ( "
                 + ID + " integer primary key, "
-                + USER_NAME + " text, "
+                + USER_NAME + " text unique, "
                 + USER_PASS + " text "
                 + ");" );
     }

@@ -1,14 +1,12 @@
-package com.example.godric.housingpayer;
+package com.example.godric.housingpayer.data;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
-import java.util.ArrayList;
+import com.example.godric.housingpayer.essence.Card;
 
 /**
  * Created by godric on 18.05.2016.
@@ -22,7 +20,7 @@ public class CardDataSource extends DataSource {
         super(context);
     }
 
-    public Card createCard(String number, int year, String owner) {
+    public boolean createCard(String number, int year, String owner) {
         open();
         ContentValues values = new ContentValues();
         values.put(DBHelper.CARD_NUMBER, number);
@@ -30,18 +28,17 @@ public class CardDataSource extends DataSource {
         values.put(DBHelper.CARD_OWNER, owner);
 
         long insertId = database.insert(DBHelper.TABLE_CARD, null, values);
-
-        Cursor cursor = database.query(DBHelper.TABLE_CARD,
-                allColumns, DBHelper.ID + " = " + insertId,
-                null, null, null, null);
-        cursor.moveToFirst();
-        Card res = new Card(cursor.getInt(0), number, year, owner);
-        cursor.close();
-        close();
-        return res;
+        if (insertId == -1) {
+            return false;
+        }
+        return true;
     }
 
-    public ArrayList<Card> getAllComments() {
+    public Card getCardByNumber(String number) {
+        return null;
+    }
+
+    public ArrayList<Card> getAllCards() {
         open();
         ArrayList<Card> cards = new ArrayList<Card>();
 

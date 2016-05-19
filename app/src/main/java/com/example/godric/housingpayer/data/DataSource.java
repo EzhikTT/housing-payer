@@ -1,4 +1,4 @@
-package com.example.godric.housingpayer;
+package com.example.godric.housingpayer.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

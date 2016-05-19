@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class AddCard extends AppCompatActivity {
+public class AddCardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,19 +1,19 @@
 package com.example.godric.housingpayer;
 
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.godric.housingpayer.data.DBHelper;
+import com.example.godric.housingpayer.data.MyUserDataSource;
+
 public class AddAccountActivity extends AppCompatActivity {
 
     DBHelper dbHelper;
-    public MyUser curUser;
+    MyUserDataSource curUser;
 
     Button okBtt;
     Button cancelBtt;
@@ -24,7 +24,7 @@ public class AddAccountActivity extends AppCompatActivity {
         setContentView(R.layout.add_account);
 
         dbHelper = new DBHelper(this);
-        curUser = new MyUser(this);
+        curUser = new MyUserDataSource(this);
 
         okBtt = (Button) findViewById(R.id.addAccOkBtt);
         cancelBtt = (Button) findViewById(R.id.addAccCancelBtt);

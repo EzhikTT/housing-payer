@@ -1,4 +1,4 @@
-package com.example.godric.housingpayer;
+package com.example.godric.housingpayer.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,28 +7,23 @@ import android.database.Cursor;
 /**
  * Created by godric on 19.05.2016.
  */
-public class MyUser extends DataSource {
+public class MyUserDataSource extends DataSource {
 
     private String[] allColumns = {DBHelper.USER_NAME, DBHelper.USER_PASS};
 
-    public MyUser(Context context) {
+    public MyUserDataSource(Context context) {
         super(context);
     }
 
     public boolean addUser(String name, String pass) {
         open();
-        Cursor cursor = database.query(DBHelper.TABLE_USER,
-                allColumns, DBHelper.USER_NAME + "=?",
-                new String[]{name}, null, null, null);
-        if (cursor == null) {
-            close();
-            return false;
-        }
         ContentValues values = new ContentValues();
         values.put(DBHelper.USER_NAME, name);
         values.put(DBHelper.USER_PASS, pass);
         long insertId = database.insert(DBHelper.TABLE_USER, null, values);
         close();
+        if (insertId == -1)
+            return false;
         return true;
     }
 
@@ -37,12 +32,10 @@ public class MyUser extends DataSource {
         Cursor cursor = database.query(DBHelper.TABLE_USER,
                 allColumns, DBHelper.USER_NAME + "=?",
                 new String[]{name}, null, null, null);
-        if (cursor == null) {
+        if (cursor.getCount() == 0) {
             return false;
         }
         cursor.moveToFirst();
-        String x1 = cursor.getString(0);
-        String x2 = cursor.getString(1);
         if (name.equals(cursor.getString(0)) && pass.equals(cursor.getString(1))) {
             return true;
         }

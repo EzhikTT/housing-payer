@@ -1,4 +1,4 @@
-package com.example.godric.housingpayer;
+package com.example.godric.housingpayer.essence;
 
 /**
  * Created by godric on 18.05.2016.

@@ -8,18 +8,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.godric.housingpayer.data.MyUserDataSource;
 
-    DBHelper dbHelper;
-    public MyUser curUser;
+public class LoginScreenActivity extends AppCompatActivity {
+
+    MyUserDataSource curUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
 
-        dbHelper = new DBHelper(this);
-        curUser = new MyUser(this);
+        curUser = new MyUserDataSource(this);
     }
 
     /** Called when the user clicks the OK button */
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.loginButton:
                 if (curUser.isLoginAccept(user, pass)) {
-                    Intent intent = new Intent(this, MainFunctions.class);
+                    Intent intent = new Intent(this, MainFunctionsActivity.class);
                     startActivity(intent);
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),

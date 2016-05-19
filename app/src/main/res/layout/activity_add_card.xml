@@ -6,7 +6,7 @@ android:layout_height="match_parent"
 android:background="#fdfbee"
 android:baselineAligned="false"
 android:scrollIndicators="bottom"
-tools:context="com.example.godric.housingpayer.AddCard">
+tools:context=".AddCardActivity">
 
 <TextView
     android:layout_width="wrap_content"
@@ -77,14 +77,18 @@ tools:context="com.example.godric.housingpayer.AddCard">
             android:layout_height="wrap_content"
             android:text="@android:string/cancel"
             android:id="@+id/addCardCancelBtt"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:onClick="doButtonClick"
+            android:singleLine="true"
+            android:nestedScrollingEnabled="false" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@android:string/yes"
             android:id="@+id/addCardOkBtt"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:onClick="doButtonClick" />
     </LinearLayout>
 
 </LinearLayout>
