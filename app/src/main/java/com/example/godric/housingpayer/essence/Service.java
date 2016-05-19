@@ -12,7 +12,7 @@ public class Service {
     private String name;
     private String description;
     private int price;
-    private ArrayList<Period> period;
+    private ArrayList<Period> period = new ArrayList<Period>();
     private String periodString;
 
     public Service(int id, String name, int price, String period) {

@@ -59,25 +59,37 @@ public class DBHelper extends SQLiteOpenHelper {
                 + ID + " integer primary key, "
                 + SERVICE_NAME  + " text unique, "
                 + SERVICE_PRICE + " int, "
+                + SERVICE_PERIOD + " text "
                 + ");" );
         db.execSQL("create table " + TABLE_PERIOD + " ( "
                 + ID + " integer primary key, "
                 + PERIOD_STARTING + " text, "
                 + PERIOD_ENDING + " text, "
                 + PERIOD_VALUE + " int "
+        + ");" );
 
+        db.execSQL("insert into " + TABLE_SERVICES + "("
+                + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
                 + " values ("
                 + "\'Gas\', 23, NULL"
                 + ");");
+        db.execSQL("insert into " + TABLE_SERVICES + "("
+                + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
                 + " values ("
                 + "\'Electric\', 30, NULL"
                 + ");");
+        db.execSQL("insert into " + TABLE_SERVICES + "("
+                + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
                 + " values ("
                 + "\'House\', 43, NULL"
                 + ");");
+        db.execSQL("insert into " + TABLE_SERVICES + "("
+                + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
                 + " values ("
                 + "\'Water\', 29, NULL"
                 + ");");
+        db.execSQL("insert into " + TABLE_SERVICES + "("
+                + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
                 + " values ("
                 + "\'Heating\', 29, NULL"
                 + ");");

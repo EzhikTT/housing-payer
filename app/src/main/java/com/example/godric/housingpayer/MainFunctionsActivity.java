@@ -35,15 +35,16 @@ public class MainFunctionsActivity extends AppCompatActivity {
                 break;
 
             case R.id.mainPayBtt:
+
                 intent = new Intent(this, ChooseServiceActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.mainSendDataBtt:
 
-                Toast toast1 = Toast.makeText(getApplicationContext(),
-                        "Sorry. Not supported yet!", Toast.LENGTH_SHORT);
-                toast1.show();
+                intent = new Intent(this, SendData.class);
+                startActivity(intent);
+
                 break;
         }
     }

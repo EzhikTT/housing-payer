@@ -20,7 +20,8 @@
         <activity android:name=".AddAccountActivity" />
         <activity android:name=".MainFunctionsActivity" />
         <activity android:name=".AddCardActivity" />
-        <activity android:name=".ChooseServiceActivity"></activity>
+        <activity android:name=".ChooseServiceActivity" />
+        <activity android:name=".SendData"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,9 @@
 package com.example.godric.housingpayer.essence;
 
 import android.content.Context;
+import android.net.MailTo;
 
+import com.example.godric.housingpayer.MainFunctionsActivity;
 import com.example.godric.housingpayer.data.CardDataSource;
 import com.example.godric.housingpayer.data.MyArray;
 import com.example.godric.housingpayer.data.ServiceDataSource;
@@ -23,8 +25,24 @@ public class User {
         cards = new ArrayList<Card>();
         services = new ArrayList<Service>();
         cardSource = new CardDataSource(context);
+        periods = new ArrayList<Period>();
         serviceSource = new ServiceDataSource(context);
         updateData();
+    }
+
+    public void addPeriodto(Period p, String service) {
+        periods.add(p);
+        for (int i = 0; i < services.size(); ++i) {
+            if (services.get(i).getName().equals(service)) {
+                services.get(i).getPeriod().add(p);
+                MainFunctionsActivity.curUser.getServiceSource().updatePeriodOfService(services.get(i));
+                break;
+            }
+        }
+    }
+
+    public ServiceDataSource getServiceSource() {
+        return this.serviceSource;
     }
 
     public void pay(String service, String period) {
@@ -134,5 +152,14 @@ public class User {
 
     public void setPeriods(ArrayList<Period> periods) {
         this.periods = periods;
+    }
+
+    public Period getPeriodByName(String choosed) {
+        for (Period p : periods) {
+            if (p.toString().equals(choosed)) {
+                return p;
+            }
+        }
+        return null;
     }
 }

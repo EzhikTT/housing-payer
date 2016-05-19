@@ -37,9 +37,25 @@ public class Period {
         return new Period(s, e);
     }
 
+    public String getStarting() {
+        return this.starting;
+    }
+
+    public String getEnding() {
+        return this.ending;
+    }
+
+    public int getValue() {
+        return this.value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
-        return starting.toString() + "/" + ending.toString();
+        return starting.toString() + " - " + ending.toString();
     }
 
     public int getId() {

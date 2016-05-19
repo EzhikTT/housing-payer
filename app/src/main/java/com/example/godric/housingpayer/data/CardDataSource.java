@@ -20,7 +20,7 @@ public class CardDataSource extends DataSource {
         super(context);
     }
 
-    public boolean createCard(String number, int year, String owner) {
+    public int createCard(String number, int year, String owner) {
         open();
         ContentValues values = new ContentValues();
         values.put(DBHelper.CARD_NUMBER, number);
@@ -28,11 +28,7 @@ public class CardDataSource extends DataSource {
         values.put(DBHelper.CARD_OWNER, owner);
 
         long insertId = database.insert(DBHelper.TABLE_CARD, null, values);
-        if (insertId == -1) {
-            close();
-            return false;
-        }
-        return true;
+        return (int) insertId;
     }
 
     public Card getCardByNumber(String number) {

@@ -12,7 +12,7 @@ public class MyArray{
     public static String toStringPeriod(ArrayList<Period> arr, char sep) {
         String res = "";
         for (int i = 0; i < arr.size(); ++i) {
-            res = res + arr.get(i).toString() + sep;
+            res = res + arr.get(i).getId() + sep;
         }
         return res;
     }

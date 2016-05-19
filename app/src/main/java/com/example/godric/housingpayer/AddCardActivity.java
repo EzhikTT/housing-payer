@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.godric.housingpayer.data.CardDataSource;
+import com.example.godric.housingpayer.essence.Card;
 
 public class AddCardActivity extends AppCompatActivity {
 
@@ -44,15 +45,17 @@ public class AddCardActivity extends AppCompatActivity {
                 }
                 try {
                     year = Integer.parseInt(tmp);
-                    if (2016 < year && year < 9999) {
+                    if (2015 < year && year < 9999) {
                         // ok
-                        if (!cardData.createCard(number, year, owner)) {
+                        int cardid = cardData.createCard(number, year, owner);
+                        if (cardid == -1) {
                             Toast.makeText(getApplicationContext(),
                                     "Card existed", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(getApplicationContext(),
                                     "Card successfully created", Toast.LENGTH_SHORT).show();
+                            MainFunctionsActivity.curUser.getCards().add(new Card(cardid, number, year, owner));
                             super.onBackPressed();
                         }
                     }
