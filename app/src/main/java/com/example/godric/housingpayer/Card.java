@@ -7,8 +7,10 @@ public class Card {
     private String owner;
     private int year;
     private String number;
+    private int _id;
 
-    public Card(String number, int year, String owner) {
+    public Card(int id, String number, int year, String owner) {
+        this._id = id;
         this.number = number;
         this.year = year;
         this.owner = owner;
@@ -37,5 +39,13 @@ public class Card {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
     }
 }
