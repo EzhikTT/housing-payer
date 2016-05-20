@@ -24,13 +24,14 @@
         android:id="@+id/createAccButton"
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="doButtonClick" />
 
     <EditText
         android:layout_width="278dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/idEdit"
+        android:id="@+id/userEdit"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:padding="10dp"
@@ -50,7 +51,7 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:hint="password"
-        android:layout_below="@+id/idEdit"
+        android:layout_below="@+id/userEdit"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -60,6 +61,8 @@
         android:id="@+id/loginButton"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/passEdit"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="doButtonClick"
+        android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>

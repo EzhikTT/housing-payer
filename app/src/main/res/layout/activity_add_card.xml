@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#fdfbee"
+android:baselineAligned="false"
+android:scrollIndicators="bottom"
+tools:context=".AddCardActivity">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Карта"
+    android:id="@+id/textView"
+    android:layout_alignParentTop="true"
+    android:layout_centerInParent="true" />
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_below="@+id/textView"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentBottom="true"
+    android:layout_centerInParent="true"
+    android:gravity="center">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addCardNumberEditText"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:hint="Номер карты"
+        android:inputType="numberDecimal"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addCardYearEditText"
+        android:textAlignment="center"
+        android:hint="Год"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="datetime"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addCardOwnerEditText"
+        android:textAlignment="center"
+        android:hint="Владец"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="textPersonName"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"
+            android:id="@+id/addCardCancelBtt"
+            android:layout_gravity="center"
+            android:onClick="doButtonClick"
+            android:singleLine="true"
+            android:nestedScrollingEnabled="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/yes"
+            android:id="@+id/addCardOkBtt"
+            android:layout_gravity="center"
+            android:onClick="doButtonClick" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</RelativeLayout>
