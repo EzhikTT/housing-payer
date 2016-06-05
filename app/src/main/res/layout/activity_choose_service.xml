@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.godric.housingpayer.ChooseServiceActivity"
-    android:background="#fdfbee">
+    tools:context="com.example.godric.housingpayer.ChooseServiceActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,7 +18,8 @@
         android:contextClickable="false"
         android:visibility="visible"
         android:nestedScrollingEnabled="true"
-        android:scrollIndicators="start">
+        android:scrollIndicators="start"
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,7 +87,9 @@
                 android:text="@android:string/cancel"
                 android:id="@+id/chooseCancelBtt"
                 android:layout_gravity="center"
-                android:onClick="doButtonClick" />
+                android:onClick="doButtonClick"
+                android:layout_marginRight="40dp"
+                android:background="@color/colorBlue"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -95,7 +97,8 @@
                 android:text="Оплатить"
                 android:id="@+id/choosePayBtt"
                 android:layout_gravity="center"
-                android:onClick="doButtonClick" />
+                android:onClick="doButtonClick"
+                android:background="@color/colorBlue"/>
         </LinearLayout>
 
     </LinearLayout>

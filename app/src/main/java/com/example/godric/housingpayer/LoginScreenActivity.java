@@ -50,6 +50,6 @@ public class LoginScreenActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-        System.out.println("----------------------- heere ");
+        System.out.println("----------------------- here ");
     }
 }

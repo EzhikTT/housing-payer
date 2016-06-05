@@ -2,9 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fdfbee"
     android:baselineAligned="false"
-    android:scrollIndicators="bottom">
+    android:scrollIndicators="bottom"
+    android:layout_marginTop="40dp"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
             android:id="@+id/addAccNameTE"
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="50dp"
             android:textAlignment="center"
             android:hint="account"
             android:gravity="center"
@@ -47,7 +48,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:gravity="center"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:layout_marginTop="40dp"/>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -64,7 +66,9 @@
                 android:text="@android:string/cancel"
                 android:id="@+id/addAccCancelBtt"
                 android:layout_gravity="center"
-                android:onClick="doButtonClick" />
+                android:onClick="doButtonClick"
+                android:layout_marginRight="40dp"
+                android:background="@color/colorBlue"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -72,7 +76,8 @@
                 android:text="@android:string/yes"
                 android:id="@+id/addAccOkBtt"
                 android:layout_gravity="center"
-                android:onClick="doButtonClick" />
+                android:onClick="doButtonClick"
+                android:background="@color/colorBlue"/>
         </LinearLayout>
 
     </LinearLayout>
