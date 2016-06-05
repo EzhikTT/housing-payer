@@ -4,9 +4,6 @@ import com.example.godric.housingpayer.essence.Period;
 
 import java.util.ArrayList;
 
-/**
- * Created by godric on 19.05.2016.
- */
 public class MyArray{
 
     public static String toStringPeriod(ArrayList<Period> arr, char sep) {

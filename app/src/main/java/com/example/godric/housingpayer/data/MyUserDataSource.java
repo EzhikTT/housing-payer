@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
-/**
- * Created by godric on 19.05.2016.
- */
 public class MyUserDataSource extends DataSource {
 
     private String[] allColumns = {DBHelper.USER_NAME, DBHelper.USER_PASS};

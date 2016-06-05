@@ -8,9 +8,6 @@ import android.database.Cursor;
 
 import com.example.godric.housingpayer.essence.Card;
 
-/**
- * Created by godric on 18.05.2016.
- */
 public class CardDataSource extends DataSource {
 
     private String[] allColumns = { DBHelper.ID,

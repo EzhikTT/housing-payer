@@ -10,9 +10,6 @@ import com.example.godric.housingpayer.essence.Service;
 
 import java.util.ArrayList;
 
-/**
- * Created by godric on 19.05.2016.
- */
 public class ServiceDataSource extends DataSource {
 
     private String[] periodcolums = { DBHelper.ID,

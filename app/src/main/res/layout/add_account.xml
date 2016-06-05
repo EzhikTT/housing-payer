@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:scrollIndicators="bottom"
-    android:layout_marginTop="40dp"
-    >
+    android:paddingTop="40dp"
+    android:background="@color/colorWhite">
 
     <TextView
         android:layout_width="wrap_content"

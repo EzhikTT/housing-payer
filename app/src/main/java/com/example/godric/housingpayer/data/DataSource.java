@@ -3,9 +3,6 @@ package com.example.godric.housingpayer.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by godric on 19.05.2016.
- */
 public class DataSource {
     protected SQLiteDatabase database;
     protected DBHelper dbHelper;

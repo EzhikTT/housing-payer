@@ -4,9 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by godric on 18.05.2016.
- */
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
@@ -66,7 +63,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + PERIOD_STARTING + " text, "
                 + PERIOD_ENDING + " text, "
                 + PERIOD_VALUE + " int "
-        + ");" );
+                + ");" );
 
         db.execSQL("insert into " + TABLE_SERVICES + "("
                 + SERVICE_NAME + ", " + SERVICE_PRICE + ", " + SERVICE_PERIOD + ") "
